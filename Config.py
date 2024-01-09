@@ -12,6 +12,11 @@ class Config:
 
     chartName = "img_{}_{}.png"
 
+def ClearDir(path):
+    if os.path.exists(path):
+        print("Resetting the folder.....",path)
+        shutil.rmtree(path=path)
+    os.mkdir(path)
 
 
 # Drawing the processing bar

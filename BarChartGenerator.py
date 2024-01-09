@@ -3,7 +3,7 @@ import numpy as np
 import shutil
 import os
 
-from Config import Config, MakeDir
+from Config import Config, MakeDir, ClearDir
 
 config = Config()
 
@@ -55,11 +55,6 @@ def GenerateOneBarChart(num, backgroundColor = False, size = config.image_width)
 
     return image, heights
 
-def ClearDir(path):
-    if os.path.exists(path):
-        print("Resetting the folder.....",path)
-        shutil.rmtree(path=path)
-    os.mkdir(path)
 
 
 
