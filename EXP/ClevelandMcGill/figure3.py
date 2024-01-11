@@ -86,7 +86,7 @@ class Figure3:
   def data_to_barchart(data):
     '''
     '''
-    barchart = np.zeros((100,100), dtype=np.bool)
+    barchart = np.zeros((100,100), dtype=bool)
 
     for i,d in enumerate(data):
 
