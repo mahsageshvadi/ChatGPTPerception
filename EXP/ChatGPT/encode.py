@@ -18,13 +18,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure3_image():
@@ -37,13 +31,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure4_image():
@@ -56,13 +44,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure1_angle_image():
@@ -74,13 +56,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure1_position_common_scale_image():
@@ -92,13 +68,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure1_length_image():
@@ -110,13 +80,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure1_direction_image():
@@ -128,14 +92,8 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
+        return grayscale
 
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
-    
     @staticmethod
     def encode__figure1_area_image():
         sparse, image, label, parameters = C.Figure1.area()
@@ -146,13 +104,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure1_volume_image():
@@ -164,13 +116,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
 
     @staticmethod
@@ -183,13 +129,7 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
     
     @staticmethod
     def encode__figure1_shading_image():
@@ -201,10 +141,4 @@ class Encode:
         grayscale[image==0] = 255
         grayscale[image==1] = 0
 
-
-        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
-        _, png = cv2.imencode('.png', rgb)
-
-        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
-
-        return b64_png, grayscale
+        return grayscale
