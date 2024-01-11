@@ -6,7 +6,7 @@ class Query:
     @staticmethod
     def query(question, data):
         # OpenAI API Key
-        api_key = "**********************************"
+        api_key = "********************************"
         # Getting the base64 string
         base64_image = data
 
@@ -28,7 +28,7 @@ class Query:
                 {
                 "type": "image_url",
                 "image_url": {
-                    "url": f"data:image/jpeg;base64,{base64_image}"
+                    "url": f"data:image/png;base64,{base64_image}"
                 }
                 }
             ]

@@ -1,6 +1,7 @@
 import base64
 from io import BytesIO
 import cv2
+import numpy as np
 
 import sys
 sys.path.append('../EXP/')
@@ -12,29 +13,18 @@ class Encode:
     def encode_image():
         data, labels, parameters = C.Figure12.generate_datapoint()
         image = C.Figure12.data_to_image(data)
+
+        # Convert to grayscale
+        size = image.shape[0]
+        grayscale = np.zeros((size,size), dtype=np.uint8)
+        grayscale[image==0] = 255
+        grayscale[image==1] = 0
         plt.axis('off')
-        plt.imshow(image)
+        plt.imshow(grayscale, cmap='gray')
 
-        image_buffer = BytesIO()
-        plt.savefig(image_buffer, format='png', dpi=200)
-        image_buffer.seek(0)
-        base64_string = base64.b64encode(image_buffer.read()).decode('utf-8')
-        image_buffer.close()
+        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
+        _, png = cv2.imencode('.png', rgb)
 
-        return base64_string
-    
-    """
-        # Convert directly to jpeg data
-    
-        data, labels, parameters = C.Figure12.generate_datapoint()
-        image = C.Figure12.data_to_image(data)
-        plt.axis('off')
-        plt.imshow(image)
+        b64_png = base64.b64encode(png.tobytes()).decode('utf-8')
 
-        _, JPEG = cv2.imencode('.jpeg', frame)
-        jpeg_data = JPEG.tobytes()
-
-        base64_string = base64.b64encode(jpeg_data).decode('utf-8')
-
-        return base64_string
-    """
+        return b64_png
