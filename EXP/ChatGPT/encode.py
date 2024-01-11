@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 class Encode:
     @staticmethod
-    def encode_image():
-        data, labels, parameters = C.Figure12.generate_datapoint()
-        image = C.Figure12.data_to_image(data)
+    def encode_image(image):
+       # data, labels, parameters = C.Figure12.generate_datapoint()
+      #  image = C.Figure12.data_to_image(data)
 
         # Convert to grayscale
         size = image.shape[0]

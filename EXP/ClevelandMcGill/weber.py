@@ -47,7 +47,7 @@ class Weber:
   @staticmethod
   def generate(base=10, to_add=10, label=1):
 
-    image = np.zeros((100,100), dtype=np.bool)
+    image = np.zeros((100,100), dtype=bool)
 
     if label != 1:
       image = np.zeros((100,100), dtype=np.uint8)

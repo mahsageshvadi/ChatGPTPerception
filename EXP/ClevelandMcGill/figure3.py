@@ -86,7 +86,7 @@ class Figure3:
   def data_to_barchart(data):
     '''
     '''
-    barchart = np.zeros((100,100), dtype=np.bool)
+    barchart = np.zeros((100,100), dtype=bool)
 
     for i,d in enumerate(data):
 
@@ -117,7 +117,7 @@ class Figure3:
     '''
     LENGTH = 50
 
-    piechart = np.zeros((100,100), dtype=np.bool)
+    piechart = np.zeros((100,100), dtype=bool)
     RADIUS = 30
     # rr,cc = skimage.draw.circle_perimeter(50,50,RADIUS)
     # piechart[rr,cc] = 1

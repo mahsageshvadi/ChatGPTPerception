@@ -132,7 +132,7 @@ class Figure4:
       
       if i == 1 or i == 6:
         # mark the max
-        barchart[94:95, left_bar+b_width/2:left_bar+b_width/2+1] = 1
+        barchart[94:95, left_bar+b_width//2:left_bar+b_width//2+1] = 1
 
     return barchart
 
@@ -175,7 +175,7 @@ class Figure4:
 
       if i == 0:
         # mark the max
-        barchart[99-int(d)/2:99-int(d)/2+1, 25:26] = 1
+        barchart[99-int(d)//2:99-int(d)//2+1, 25:26] = 1
 
 
 
@@ -211,7 +211,7 @@ class Figure4:
 
       if i == 0:
         # mark the max
-        barchart[99-int(d)/2:99-int(d)/2+1, 75:76] = 1
+        barchart[99-int(d)//2:99-int(d)//2+1, 75:76] = 1
 
 
     return barchart
@@ -261,7 +261,7 @@ class Figure4:
       if i == 4:
         # mark the max
         # print current, d
-        barchart[99-current+(int(d)/2):99-current+(int(d)/2)+1, 25:26] = 1
+        barchart[99-current+(int(d)//2):99-current+(int(d)//2)+1, 25:26] = 1
 
 
     below_last_sum2 = below_last_sum
@@ -313,7 +313,7 @@ class Figure4:
       if i == 4:
         # mark the max
         # print current, d
-        barchart[99-current+(int(d)/2):99-current+(int(d)/2)+1, 75:76] = 1
+        barchart[99-current+(int(d)//2):99-current+(int(d)//2)+1, 75:76] = 1
 
 
 
@@ -367,7 +367,7 @@ class Figure4:
       if i == 3 or i ==4:
         # mark the max
         # print current, d
-        barchart[99-current+(int(d)/2):99-current+(int(d)/2)+1, 25:26] = 1
+        barchart[99-current+(int(d)//2):99-current+(int(d)//2)+1, 25:26] = 1
 
 
 
