@@ -1,14 +1,21 @@
 import sys
 sys.path.append('../EXP/')
 import requests
+import cv2
+import numpy as np
+import base64
 
 class Query:
     @staticmethod
-    def query(question, data):
+    def query(question, grayscale):
+
+        rgb = np.stack((grayscale,grayscale,grayscale),axis=-1)
+        _, png = cv2.imencode('.png', rgb)
+
+        base64_image = base64.b64encode(png.tobytes()).decode('utf-8')
+
         # OpenAI API Key
-        api_key = "********************************"
-        # Getting the base64 string
-        base64_image = data
+        api_key = "****************************"
 
         headers = {
             "Content-Type": "application/json",

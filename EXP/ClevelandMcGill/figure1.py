@@ -278,7 +278,7 @@ class Figure1:
       Y, p = Util.parameter(Y_RANGE[0], Y_RANGE[1])
       parameters *= p
 
-    image = np.zeros(Figure1.SIZE, dtype=np.bool)
+    image = np.zeros(Figure1.SIZE, dtype=bool)
 
     # first line
     first_angle = np.random.randint(360)
