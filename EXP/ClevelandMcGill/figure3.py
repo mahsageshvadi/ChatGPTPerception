@@ -117,7 +117,7 @@ class Figure3:
     '''
     LENGTH = 50
 
-    piechart = np.zeros((100,100), dtype=np.bool)
+    piechart = np.zeros((100,100), dtype=bool)
     RADIUS = 30
     # rr,cc = skimage.draw.circle_perimeter(50,50,RADIUS)
     # piechart[rr,cc] = 1
