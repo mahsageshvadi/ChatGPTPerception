@@ -76,3 +76,12 @@ class Encode:
         sparse, image, label, parameters = C.Figure1.shading()
 
         return image
+    
+    
+    @staticmethod
+    def encode__weber_base10():
+        image, label = C.Weber.base10()
+
+        return image
+    
+    
