@@ -3,15 +3,16 @@ import numpy as np
 import os
 import skimage.draw
 import sys
+import cv2
 
 sys.path.append('../')
 from EXP.util import Util
 
 class Figure1:
 
-  DELTA_MIN = 20
-  DELTA_MAX = 80
-  SIZE = (100, 100)
+  DELTA_MIN = 400
+  DELTA_MAX = 800
+  SIZE = (1000, 1000)
 
   @staticmethod
   def position_common_scale(flags=[False, False], preset=None):
@@ -260,7 +261,7 @@ class Figure1:
     X_RANGE = (Figure1.DELTA_MIN, Figure1.DELTA_MAX)
 
     DOF = 90
-    ANGLE = np.random.randint(1, DOF+1)
+    ANGLE = np.random.randint(1, 90+DOF+1)
     parameters *= DOF
 
     if preset:
@@ -284,15 +285,39 @@ class Figure1:
     first_angle = np.random.randint(360)
     theta = -(np.pi / 180.0) * first_angle
     END = (Y - LENGTH * np.cos(theta), X - LENGTH * np.sin(theta))
-    rr, cc = skimage.draw.line(Y, X, int(np.round(END[0])), int(np.round(END[1])))
-    image[rr, cc] = 1
+ #   rr, cc = skimage.draw.line(Y, X, int(np.round(END[0])), int(np.round(END[1])))
+ #   image[rr, cc] = 1
+    
+    
+    start_point = (X, Y)
 
+    # End point (calculated from your existing code)
+    end_point = (int(np.round(END[1])), int(np.round(END[0])))
+
+    # Line color - BGR format (e.g., blue)
+    color = (255, 0, 0)  
+
+    # Line thickness 
+    thickness = 5  # You can change this value
+
+    # Draw the line
+    image = cv2.line(image, start_point, end_point, color, thickness)
+    
+    
     second_angle = first_angle+ANGLE
     theta = -(np.pi / 180.0) * second_angle
     END = (Y - LENGTH * np.cos(theta), X - LENGTH * np.sin(theta))
-    rr, cc = skimage.draw.line(Y, X, int(np.round(END[0])), int(np.round(END[1])))
-    image[rr, cc] = 1
+  #  rr, cc = skimage.draw.line(Y, X, int(np.round(END[0])), int(np.round(END[1])))
+ #   image[rr, cc] = 1
 
+
+    end_point = (int(np.round(END[1])), int(np.round(END[0])))
+
+    # Draw the line
+    image = cv2.line(image, start_point, end_point, color, thickness)
+    
+    
+    
     sparse = [Y, X, ANGLE, first_angle]
 
     label = ANGLE
