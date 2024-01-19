@@ -30,7 +30,7 @@ class Query:
         base64_image = base64.b64encode(png.tobytes()).decode('utf-8')
 
         # OpenAI API Key
-        api_key = "**********************************************"
+        api_key = "***********************************************"
 
         headers = {
             "Content-Type": "application/json",
@@ -39,6 +39,7 @@ class Query:
 
         payload = {
         "model": "gpt-4-vision-preview",
+    #    "temperature" : 0.0,
         "messages": [
             {
             "role": "user",
@@ -50,16 +51,18 @@ class Query:
                 {
                 "type": "image_url",
                 "image_url": {
-                    "url": f"data:image/png;base64,{base64_image}"
+                    "url": f"data:image/png;base64,{base64_image}",
+                    #"detail": "high"
+
                 }
                 }
             ]
             }
         ],
-        "max_tokens": 300
+        "max_tokens": 2048
         }
 
         response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
-        content_string = response.json()['choices'][0]['message']['content']
+        content_string = response.json()
         return content_string  

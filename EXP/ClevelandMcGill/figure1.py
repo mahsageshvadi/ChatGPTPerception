@@ -261,7 +261,7 @@ class Figure1:
     X_RANGE = (Figure1.DELTA_MIN, Figure1.DELTA_MAX)
 
     DOF = 90
-    ANGLE = np.random.randint(1, 90+DOF+1)
+    ANGLE = np.random.randint(1, DOF+1)
     parameters *= DOF
 
     if preset:
